@@ -33,6 +33,28 @@ El proyecto está organizado en paquetes con diferentes responsabilidades, como 
 - **`view`**:
   - `Menu.java`: Define el menú principal de la aplicación, permitiendo al usuario crear, listar, modificar y eliminar productos, clientes y facturas.
 
+## Configuración de la Conexión a la Base de Datos
+
+Antes de ejecutar la aplicación, es necesario configurar las credenciales de acceso a la base de datos MySQL en la clase `Conexion.java`.
+
+### Pasos para Configurar la Conexión
+
+1. Abre el archivo `Conexion.java` en el paquete `controller`.
+2. Localiza las siguientes líneas de código:
+
+   ```java
+   private static final String URL = "jdbc:mysql://localhost:3306/DieteticaDietinBD";
+   private static final String USUARIO = "tu_usuario";
+   private static final String PASSWORD = "tu_password";
+   ```
+3. Reemplaza "tu_usuario" y "tu_password" con tu usuario y contraseña correspondientes a tu instalación de MySQL.
+    ```java
+    private static final String URL = "jdbc:mysql://localhost:3306/DieteticaDietinBD";
+    private static final String USUARIO = "root";
+    private static final String PASSWORD = "password123";
+    ```
+Una vez configurado, puedes proceder a compilar y ejecutar la aplicación como se detalla en la sección de [Ejecución del Proyecto](#ejecución-del-proyecto).
+
 ## Base de Datos
 
 La base de datos se llama `DieteticaDietinBD`. El archivo SQL `DieteticaDietinBD.sql` contiene las instrucciones necesarias para crear la base de datos y sus tablas. Las tablas principales son:
@@ -129,4 +151,3 @@ El menú permite al usuario interactuar con el sistema de manera sencilla utiliz
 - **Eliminación lógica**: La anulación de facturas y eliminación de clientes y productos se realiza de forma lógica, sin eliminar físicamente los datos.
 - **Generación de número de factura único**: Se genera un número de factura aleatorio y único para cada factura creada.
 - **Auditoría**: Se registran los campos de auditoría como `created_at`, `updated_at`, y `deleted_at`.
-- 
